@@ -5,6 +5,7 @@ struct BalanceProApp: App {
   var body: some Scene {
     WindowGroup {
       MainView()
+        .background(.appBG).ignoresSafeArea()
     }
   }
 }

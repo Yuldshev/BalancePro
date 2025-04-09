@@ -11,11 +11,12 @@ struct SplashView: View {
       }
       .playing()
       .frame(width: 250, height: 250)
-      
     }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
 
 #Preview {
   SplashView(appState: .init())
+    .background(.appBG).ignoresSafeArea()
 }
