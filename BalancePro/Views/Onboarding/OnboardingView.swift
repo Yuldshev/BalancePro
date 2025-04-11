@@ -14,63 +14,69 @@ struct OnboardingView: View {
   ]
   
   var body: some View {
-    VStack {
-      ForEach(0..<onboardList.count, id: \.self) { screen in
-        if screen == indicator {
-          OnboardingScreen(
-            header: onboardList[screen].0,
-            subheader: onboardList[screen].1,
-            lottie: onboardList[screen].2
-          )
-          .transition(.move(edge: swipeDirection == .left ? .trailing : .leading))
-          .id(indicator)
-        }
-      }
-    }
-    .padding(.horizontal, 24)
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .safeAreaInset(edge: .bottom) {
-      HStack {
-        IndicatorView(currentIndex: indicator)
+    ZStack {
+      Color.appBG.ignoresSafeArea()
+      
+      VStack {
         Spacer()
-        NextCustomBtn(isFinish: indicator < onboardList.count - 1) {
-          withAnimation(.easeOut) {
-            if indicator < onboardList.count - 1 {
-              swipeDirection = .left
-              indicator += 1
-            } else {
-              UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
-              appState.checkAppState()
-            }
+        ForEach(0..<onboardList.count, id: \.self) { screen in
+          if screen == indicator {
+            OnboardingScreen(
+              header: onboardList[screen].0,
+              subheader: onboardList[screen].1,
+              lottie: onboardList[screen].2
+            )
+            .transition(.blurReplace)
+            .id(indicator)
           }
         }
-      }
-      .padding(.horizontal, 24)
-      .padding(.bottom, 40)
-    }
-    .gesture(
-      DragGesture()
-        .onEnded { value in
-          let threshold: CGFloat = 50
-          withAnimation(.easeInOut) {
-            if value.translation.width < -threshold {
+        
+        Spacer()
+        
+        HStack {
+          IndicatorView(currentIndex: indicator)
+          Spacer()
+          NextCustomButton(isFinish: indicator < onboardList.count - 1) {
+            withAnimation(.easeOut) {
               if indicator < onboardList.count - 1 {
                 swipeDirection = .left
                 indicator += 1
-              }
-            } else if value.translation.width > threshold {
-              if indicator > 0 {
-                swipeDirection = .right
-                indicator -= 1
+              } else {
+                UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+                appState.checkAppState()
               }
             }
           }
         }
-    )
+        .padding(.horizontal, 24)
+        .padding(.bottom, 40)
+      }
+      .padding(.horizontal, 24)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .gesture(
+        DragGesture()
+          .onEnded { value in
+            let threshold: CGFloat = 50
+            withAnimation(.easeInOut) {
+              if value.translation.width < -threshold {
+                if indicator < onboardList.count - 1 {
+                  swipeDirection = .left
+                  indicator += 1
+                }
+              } else if value.translation.width > threshold {
+                if indicator > 0 {
+                  swipeDirection = .right
+                  indicator -= 1
+                }
+              }
+            }
+          }
+      )
+    }
   }
 }
 
-//MARK: - SupportView
+//MARK: - OnboardingScreen
 struct OnboardingScreen: View {
   var header: String
   var subheader: String
@@ -91,6 +97,7 @@ struct OnboardingScreen: View {
   }
 }
 
+//MARK: - AnimationView
 struct AnimationView: View {
   @State private var shouldLoad = false
   
@@ -103,10 +110,11 @@ struct AnimationView: View {
       }
       .playing()
     }
-    .frame(maxWidth: 346, maxHeight: 346)
+    .frame(maxWidth: 300, maxHeight: 300)
   }
 }
 
+//MARK: - IndicatorView
 struct IndicatorView: View {
   var currentIndex: Int
   
@@ -121,7 +129,8 @@ struct IndicatorView: View {
   }
 }
 
-struct NextCustomBtn: View {
+//MARK: - NextCustomButton
+struct NextCustomButton: View {
   var isFinish: Bool
   var action: () -> Void
   
@@ -149,5 +158,4 @@ enum SwipeDirection {
 //MARK: - Preview
 #Preview {
   OnboardingView(appState: .init())
-    .background(.appBG).ignoresSafeArea()
 }

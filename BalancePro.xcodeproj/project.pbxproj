@@ -8,15 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		16A817442DA4FA410095E7B9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 16A817432DA4FA410095E7B9 /* Lottie */; };
+		16A8175A2DA64EA50095E7B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 16A817592DA64EA50095E7B9 /* FirebaseAuth */; };
+		16A8175F2DA64F250095E7B9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 16A8175E2DA64F250095E7B9 /* GoogleSignIn */; };
+		16A817612DA64F250095E7B9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16A817602DA64F250095E7B9 /* GoogleSignInSwift */; };
+		16C916FC2DA91B9800B4B522 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 16C916FB2DA91B9800B4B522 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16A816EA2DA3AEE80095E7B9 /* BalancePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		16A817552DA64D6C0095E7B9 /* Exceptions for "BalancePro" folder in "BalancePro" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 16A816E92DA3AEE80095E7B9 /* BalancePro */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		16A816EC2DA3AEE80095E7B9 /* BalancePro */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				16A817552DA64D6C0095E7B9 /* Exceptions for "BalancePro" folder in "BalancePro" target */,
+			);
 			path = BalancePro;
 			sourceTree = "<group>";
 		};
@@ -27,7 +44,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A817612DA64F250095E7B9 /* GoogleSignInSwift in Frameworks */,
+				16A8175F2DA64F250095E7B9 /* GoogleSignIn in Frameworks */,
+				16A8175A2DA64EA50095E7B9 /* FirebaseAuth in Frameworks */,
 				16A817442DA4FA410095E7B9 /* Lottie in Frameworks */,
+				16C916FC2DA91B9800B4B522 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				16A816EC2DA3AEE80095E7B9 /* BalancePro */,
+				16C916F62DA91B1700B4B522 /* Frameworks */,
 				16A816EB2DA3AEE80095E7B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +70,13 @@
 				16A816EA2DA3AEE80095E7B9 /* BalancePro.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		16C916F62DA91B1700B4B522 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +100,10 @@
 			name = BalancePro;
 			packageProductDependencies = (
 				16A817432DA4FA410095E7B9 /* Lottie */,
+				16A817592DA64EA50095E7B9 /* FirebaseAuth */,
+				16A8175E2DA64F250095E7B9 /* GoogleSignIn */,
+				16A817602DA64F250095E7B9 /* GoogleSignInSwift */,
+				16C916FB2DA91B9800B4B522 /* FirebaseFirestore */,
 			);
 			productName = BalancePro;
 			productReference = 16A816EA2DA3AEE80095E7B9 /* BalancePro.app */;
@@ -102,6 +135,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				16A817422DA4FA410095E7B9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				16A8175D2DA64F250095E7B9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16A816EB2DA3AEE80095E7B9 /* Products */;
@@ -265,6 +300,7 @@
 				DEVELOPMENT_TEAM = 9WVBG69A9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BalancePro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BalancePro;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -299,6 +335,7 @@
 				DEVELOPMENT_TEAM = 9WVBG69A9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BalancePro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BalancePro;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -355,6 +392,22 @@
 				minimumVersion = 4.5.1;
 			};
 		};
+		16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+		16A8175D2DA64F250095E7B9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -362,6 +415,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16A817422DA4FA410095E7B9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		16A817592DA64EA50095E7B9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		16A8175E2DA64F250095E7B9 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A8175D2DA64F250095E7B9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		16A817602DA64F250095E7B9 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A8175D2DA64F250095E7B9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		16C916FB2DA91B9800B4B522 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

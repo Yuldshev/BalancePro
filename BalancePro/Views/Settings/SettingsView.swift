@@ -5,7 +5,6 @@ struct SettingsView: View {
   
   var body: some View {
     Button("Settings") {
-      UserDefaults.standard.set(true, forKey: "isAuthenticated")
       appState.checkAppState()
     }
   }

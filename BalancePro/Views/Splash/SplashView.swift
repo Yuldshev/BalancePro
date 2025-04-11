@@ -5,7 +5,9 @@ struct SplashView: View {
   @ObservedObject var appState: AppState
   
   var body: some View {
-    VStack {
+    ZStack {
+      Color.appBG.ignoresSafeArea() 
+      
       LottieView {
         try await DotLottieFile.named("logo")
       }
@@ -18,5 +20,4 @@ struct SplashView: View {
 
 #Preview {
   SplashView(appState: .init())
-    .background(.appBG).ignoresSafeArea()
 }
