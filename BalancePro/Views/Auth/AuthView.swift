@@ -58,7 +58,7 @@ struct AuthFormView: View {
   
   private var RegisterView: some View {
     VStack(alignment: .leading, spacing: 24) {
-      Text("Sign In")
+      Text("Регистрация")
         .font(.system(size: 38, weight: .semibold))
       
       VStack(spacing: 16) {
