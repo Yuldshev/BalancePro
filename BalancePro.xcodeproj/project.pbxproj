@@ -12,6 +12,8 @@
 		16A8175F2DA64F250095E7B9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 16A8175E2DA64F250095E7B9 /* GoogleSignIn */; };
 		16A817612DA64F250095E7B9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16A817602DA64F250095E7B9 /* GoogleSignInSwift */; };
 		16C916FC2DA91B9800B4B522 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 16C916FB2DA91B9800B4B522 /* FirebaseFirestore */; };
+		16C916FE2DAA39B800B4B522 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 16C916FD2DAA39B800B4B522 /* FirebaseDatabase */; };
+		16C9170D2DAA5D0300B4B522 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = 16C9170C2DAA5D0300B4B522 /* SwiftfulLoadingIndicators */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C9170D2DAA5D0300B4B522 /* SwiftfulLoadingIndicators in Frameworks */,
+				16C916FE2DAA39B800B4B522 /* FirebaseDatabase in Frameworks */,
 				16A817612DA64F250095E7B9 /* GoogleSignInSwift in Frameworks */,
 				16A8175F2DA64F250095E7B9 /* GoogleSignIn in Frameworks */,
 				16A8175A2DA64EA50095E7B9 /* FirebaseAuth in Frameworks */,
@@ -104,6 +108,8 @@
 				16A8175E2DA64F250095E7B9 /* GoogleSignIn */,
 				16A817602DA64F250095E7B9 /* GoogleSignInSwift */,
 				16C916FB2DA91B9800B4B522 /* FirebaseFirestore */,
+				16C916FD2DAA39B800B4B522 /* FirebaseDatabase */,
+				16C9170C2DAA5D0300B4B522 /* SwiftfulLoadingIndicators */,
 			);
 			productName = BalancePro;
 			productReference = 16A816EA2DA3AEE80095E7B9 /* BalancePro.app */;
@@ -137,6 +143,7 @@
 				16A817422DA4FA410095E7B9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				16A8175D2DA64F250095E7B9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				16C9170B2DAA5D0300B4B522 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16A816EB2DA3AEE80095E7B9 /* Products */;
@@ -408,6 +415,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		16C9170B2DAA5D0300B4B522 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -435,6 +450,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		16C916FD2DAA39B800B4B522 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16A817562DA64EA50095E7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		16C9170C2DAA5D0300B4B522 /* SwiftfulLoadingIndicators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16C9170B2DAA5D0300B4B522 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
+			productName = SwiftfulLoadingIndicators;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

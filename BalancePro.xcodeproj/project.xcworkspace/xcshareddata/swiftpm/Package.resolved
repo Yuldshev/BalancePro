@@ -1,5 +1,5 @@
 {
-  "originHash" : "5460b85102e503189d306334928ba36b449a1298499a7e9a1c317cfb02946b48",
+  "originHash" : "7228f988216d22cca5278d3e9ec84caabae3e1a334ddc4b8c4129c8152fab8d9",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -152,6 +152,15 @@
       "state" : {
         "revision" : "d72aed98f8253ec1aa9ea1141e28150f408cf17f",
         "version" : "1.29.0"
+      }
+    },
+    {
+      "identity" : "swiftfulloadingindicators",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git",
+      "state" : {
+        "revision" : "85858c0246dcd781228301f9928519f75ce89758",
+        "version" : "0.0.4"
       }
     }
   ],
