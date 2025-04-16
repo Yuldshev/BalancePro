@@ -13,12 +13,15 @@ class AppState: ObservableObject {
   func checkAppState() {
     let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
     let isAuthenticated = UserDefaults.standard.bool(forKey: "isAuthenticated")
+    let isSettings = UserDefaults.standard.bool(forKey: "isSettings")
     
     withAnimation {
       if !hasSeenOnboarding {
         currentView = .onboarding
       } else if !isAuthenticated {
         currentView = .auth
+      } else if !isSettings {
+        currentView = .settings
       } else {
         currentView = .home
       }

@@ -28,7 +28,7 @@ struct MainView: View {
 
 #Preview {
   MainView()
-      .onAppear{ resetUserDefaults() }
+//      .onAppear{ resetUserDefaults() }
 }
 
 @MainActor
@@ -36,4 +36,5 @@ func resetUserDefaults() {
   let defaults = UserDefaults.standard
   defaults.removeObject(forKey: "hasSeenOnboarding")
   defaults.removeObject(forKey: "isAuthenticated")
+  defaults.removeObject(forKey: "isSettings")
 }
